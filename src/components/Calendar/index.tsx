@@ -44,7 +44,7 @@ interface Props {
 
 const Calendar = (props: Props) => {
     // Props
-    const { date, minDate, maxDate, onClickPrevious, onClickNext, changeMonth, changeYear } = props;
+    const { date, minDate, maxDate, onClickPrevious, onClickNext, changeMonth, changeYear, allowCustomRange } = props;
 
     // Contexts
     const {
@@ -310,7 +310,7 @@ const Calendar = (props: Props) => {
                 )}
             </div>
 
-            <div className="px-0.5 sm:px-2 mt-0.5 min-h-[285px]">
+            <div className={`px-0.5 sm:px-2 mt-0.5 min-h-[285px] ${allowCustomRange ? '' : 'pointer-events-none'}`}>
                 {showMonths && (
                     <Months currentMonth={date.getMonth() + 1} clickMonth={clickMonth} />
                 )}
