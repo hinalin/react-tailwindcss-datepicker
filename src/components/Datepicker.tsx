@@ -74,7 +74,9 @@ const Datepicker = (props: DatepickerType) => {
         toggleIcon = undefined,
 
         useRange = true,
-        value = null
+        value = null,
+
+        allowCustomRange = true,
     } = props;
 
     // Refs
@@ -414,6 +416,7 @@ const Datepicker = (props: DatepickerType) => {
                                     changeYear={changeFirstYear}
                                     minDate={minDate}
                                     maxDate={maxDate}
+                                    allowCustomRange={allowCustomRange}
                                 />
 
                                 {useRange && (
@@ -430,6 +433,7 @@ const Datepicker = (props: DatepickerType) => {
                                             changeYear={changeSecondYear}
                                             minDate={minDate}
                                             maxDate={maxDate}
+                                            allowCustomRange={allowCustomRange}
                                         />
                                     </>
                                 )}
